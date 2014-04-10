@@ -1,0 +1,38 @@
+@include border-box-sizing; 
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+
+#{headings()},a, li, p {
+	font-family: Arial, sans-serif;
+	color: #888;
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		color: #555;
+	}
+}
+
+h2 {
+	margin: 20px;
+}
+
+a.btn {
+	display: inline-block;
+	margin: 20px auto;
+	padding: 10px 15px;
+	background: $orange;
+	color: $white;
+
+	&:hover {
+		background: $red;
+	}
+}
+
+a.btn-large {
+	padding: 15px 25px;
+}
+
