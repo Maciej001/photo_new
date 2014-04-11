@@ -22,6 +22,7 @@ module Photo
     # config.i18n.default_locale = :de
 
     # added in Chapter 5
+    I18n.enforce_available_locales = true
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end
