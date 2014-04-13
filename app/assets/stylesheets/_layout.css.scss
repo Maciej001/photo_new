@@ -3,6 +3,10 @@ header {
 	height: 70px;
 	background: #e5e5e5;
 
+	.navbar-inner {
+		@include container;
+	}
+
 	.container {
 		@include container;
 		max-width: $max-width;
@@ -40,4 +44,91 @@ header {
 	h1,h2 {
 		color: $white;
 	}
+}
+
+.photographer {
+
+	@include container;
+	margin-top: 20px;
+
+	img {
+		float: left;
+		border: 2px solid $white;
+		width: 150px;
+		height: 150px;
+		margin-right: 20px;
+	}
+}
+
+// Signup ---------------------------------------
+
+.signup-wrapper {
+	width: 100%;
+	height: 800px;
+	padding-top: 50px;
+	@include background(image-url('signup.jpg'));
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	.signup {
+		width: 400px;
+		margin: 0 auto;
+		padding: 30px;
+		border-top: 1px solid rgba(255,255,255,0.25);
+		border-bottom: 1px solid rgba(0,0,0,0.4);
+		background: rgba(255,255,255,0.2);
+		@include border-radius(5px);
+
+		h1 {
+			color: $white;
+			margin-bottom: 30px;
+		}
+
+		label { 
+			width: 100%;
+			display: inline-block;
+			color: $white;
+			margin-bottom: 7px;
+		}
+
+		input {
+			display: inline-block;
+			width: 100%;
+			height: 45px;
+			color: $white;
+			margin-bottom: 15px;
+			padding: 10px;
+			@include border-radius(3px);
+
+			background: rgba(255,255,255,0.25);
+			border: none;
+			outline: none;
+
+
+			
+
+		} // input
+	} // signup
+
+	input.btn-signup {
+		margin: 20px auto;
+		padding: 15px 20px;
+		width: auto;
+		height: auto;
+
+		color: $white;
+		background: rgba(255,255,255, 0.2);
+		border: 3px solid $white;
+
+		&:hover {
+			background: rgba(255,255,255, 0.35);
+
+			cursor: pointer;
+		}
+
+	} 
+	
+
+
+
 }

@@ -2,12 +2,13 @@ source 'https://rubygems.org'
 ruby '2.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
+gem 'pg'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'faker'
 gem 'will_paginate'
 
 group :development, :test do
-	gem 'sqlite3'   # sqlite3 for ActiveRecord
+
 	gem 'rspec-rails', '2.13.1'
 	gem 'guard-rspec', '2.5.0'
 
@@ -45,6 +46,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :production do
+  gem 'rails_12factor', '0.0.2'
+end
 
 
 # Use ActiveModel has_secure_password

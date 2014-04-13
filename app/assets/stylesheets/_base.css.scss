@@ -1,11 +1,15 @@
 @include border-box-sizing; 
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2rem; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
 
-#{headings()},a, li, p {
+#{headings()},a, li, p, label, input {
 	font-family: Arial, sans-serif;
 	color: #888;
+}
+
+label, input {
+	font-size: 1rem;
 }
 
 a {
@@ -36,3 +40,25 @@ a.btn-large {
 	padding: 15px 25px;
 }
 
+.error_explanations {
+
+	background: rgba(255,255,255, 0.25);
+	padding: 20px;
+	margin-bottom: 20px;
+	@include border-radius(3px);
+
+	h2 {
+		margin: 10px 0;
+		padding: 10px;
+		font-family: Arial, sans-serif;
+		font-size: 1rem;
+		color: $red;
+		background: rgba(255,255,255, 0.7);
+		@include border-radius(3px);
+	}
+
+	li {
+		color: $white;
+		padding: 5px;
+	}
+}
