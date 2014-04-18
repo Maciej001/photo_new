@@ -5,18 +5,18 @@ h2 { font-size: 1.5rem; }
 
 #{headings()},a, li, p, label, input {
 	font-family: Arial, sans-serif;
-	color: #888;
+	color: $gray;
 }
 
-label, input {
-	font-size: 1rem;
+p, li, a, label, input {
+	font-size: 1.2rem;
 }
 
 a {
 	text-decoration: none;
 
 	&:hover {
-		color: #555;
+		color: $dark-gray;
 	}
 }
 
@@ -61,4 +61,8 @@ a.btn-large {
 		color: $white;
 		padding: 5px;
 	}
+}
+
+.fa {
+	margin-right: 5px;
 }
