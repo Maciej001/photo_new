@@ -1,0 +1,37 @@
+
+
+.menu-active, .menu-icon-active {
+	color: $dark-gray;
+}
+
+.avatar {
+		float: left;
+		border: 2px solid $white;
+		width: 150px;
+		height: 150px;
+		margin-right: 20px;
+	}
+
+// Pagination ------------------------------------
+
+.pagination {
+	padding: 20px 0;
+
+	.previous_page, .next_page, .current, a {
+		padding: 8px 15px;
+		background: $very-light-gray;
+		border: 1px solid $light-gray;
+		@include border-radius(2px);
+
+		font-family: Arial, sans-serif;
+	}
+
+	.current, a {
+		margin: 0 2px;
+		border: 1px solid $gray;
+	}
+	.current {
+		background: $light-gray;
+	}
+
+}

@@ -1,0 +1,31 @@
+<% provide(:title, 'Edit user') %>
+
+<div class="signup-wrapper edit-profile-wrapper">
+  <section class="signup">
+
+    <h1>Update your profile</h1>
+    <%= form_for(@user) do |f| %>
+
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation%>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Save changes", class: "btn-signup" %>
+    <% end %>
+
+    <section>
+      <%= image_tag("photographer_300x300.jpg", alt: @user.name, class: "avatar")%>
+      <%= link_to "change", "#" %>
+    </section>
+  </div>
+</div>

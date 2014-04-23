@@ -1,6 +1,7 @@
 <header class="navbar">
 	<div class="navbar-inner">
 		<div class="header-container">
+			
 			<section class="logo-wrapper">
 				<%= link_to "Photo", root_path, id: "logo" %>
 				<i class="menu-icon fa fa-bars fa-lg"></i>
@@ -10,27 +11,58 @@
 				<ul class="nav">
 					<li><%= link_to "Home", root_path %></li>
 					<!-- <li><%= link_to "Contact", contact_path %></li> -->
-
-					<% if signed_in? %>
-						<li><i class="fa fa-users"></i><%= link_to "Users", "#"%></li>
-						<li>
-							<a href="#">Account</a>
-							<ul class="dropdown-menu">
-								<!-- converts current_user into user_path(current_user) -->
-								<li><i class="fa fa-user"></i><%= link_to "Profile", current_user %></li>
-								<li><i class="fa fa-gear"></i><%= link_to "Settings", "#" %></li>
-								<li><i class="fa fa-lock"></i><%= link_to "Sign out", signout_path, method: "delete" %></li>
-							</ul>
-						</li>
-					<% else %>
-						<li><%= link_to "Sign in", signin_path %></li>
-					<% end %>
-
 					<li><%= link_to "Help", help_path %></li>
 					<li><%= link_to "About Us", about_path %></li>
 
+					<% if signed_in? %>
+						
+						<li>
+							<%= link_to(users_path) do %>
+								<i class="fa fa-users"></i>Users
+							<% end %>
+						</li>
+
+						<li><a href="#">Account</a></li>
+					
+					<% else %>
+					
+						<li><%= link_to "Sign in", signin_path %></li>
+					
+					<% end %>
+
 				</ul>
 			</nav>
+
+		</div>  <!-- header-container -->
+
+		<!-- This section is visible only if Account clicked and signed in -->
+		<% if signed_in? %>
+		<div class="submenu-wrapper">
+			<section class="submenu">
+				<ul>
+					<li>
+						<%= link_to(current_user) do %>
+							<i class="fa fa-user"></i>Profile
+						<% end %> 
+					</li>
+
+					<li>
+						<%= link_to(edit_user_path(current_user)) do %>
+							<i class="fa fa-gear"></i>Settings
+						<% end %>
+					</li>
+
+					<li>
+						<%= link_to(signout_path, method: "delete") do %>
+							<i class="fa fa-lock"></i>Sign out
+						<% end %>
+					</li>
+					
+				<!-- 	<li><i class="fa fa-lock"></i><%= link_to "Sign out", signout_path, method: "delete" %></li> -->
+				</ul>
+			</section>
 		</div>
-	</div>
+		<% end %>
+	
+	</div> <!-- navbar-inner -->
 </header>

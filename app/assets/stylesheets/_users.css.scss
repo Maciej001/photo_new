@@ -1,0 +1,18 @@
+.container {
+	@include container;
+}
+
+.users-index {
+	
+		li {
+			@include pie-clearfix;
+			display: block;
+			width: 100%;
+			margin: 10px 0 ;
+	
+			img.avatar { 
+				float: left;
+				display: inline-block;
+			}
+		} // li 
+} // .users-index
