@@ -34,4 +34,7 @@
 		background: $light-gray;
 	}
 
+	.disabled {
+		color: darken($very-light-gray, 10%);
+	}
 }
