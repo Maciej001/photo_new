@@ -29,7 +29,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default
 group :assets do
-	gem 'sass-rails', '~> 4.0.3'  # use scss for stylesheets
+	gem 'sass-rails', '~> 4.0.2'  # use scss for stylesheets
 	gem 'compass-rails'  #otoczka :assets dodana na potrzeby compass
 	gem 'susy'
 	gem "font-awesome-rails"   

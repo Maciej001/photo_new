@@ -1,5 +1,6 @@
+.container { @include container; }
 .users-index {
-	
+		
 		li {
 			@include pie-clearfix;
 			display: block;
@@ -14,5 +15,6 @@
 } // .users-index
 
 .photographer {
+
 	margin-top: 20px;
 }
