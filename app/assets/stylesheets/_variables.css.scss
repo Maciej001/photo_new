@@ -6,6 +6,11 @@ $small                  : 30em;
 $medium                 : 47em;
 $large 								  : 75em;
 
+$total-columns: 				12;
+$column-width:    			4em;
+$gutter-width:   				1em;
+$grid-padding:          $gutter-width;
+
 // Colors ---------------------------------------
 
 $white: 		#e5e5e5;

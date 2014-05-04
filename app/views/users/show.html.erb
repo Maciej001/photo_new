@@ -1,7 +1,7 @@
 <% provide(:title, @user.name) %>
-<section class="photographer">
-	<h1>
-		<%= image_tag("photographer_300x300.jpg", alt: @user.name, class: "avatar") %>
-		<%= @user.name %>
-	</h1>
-</section>
+<div class="container">
+	<section class="photographer">
+			<%= image_tag("photographer_300x300.jpg", alt: @user.name, class: "avatar") %>
+			<h2><%= @user.name %></h2>
+	</section>
+</div>

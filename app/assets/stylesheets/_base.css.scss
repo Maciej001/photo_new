@@ -1,4 +1,22 @@
+// Susy setup ---------------------------------------------
+
+$total-columns: 				12;
+$column-width:    			4em;
+$gutter-width:   				1em;
+$grid-padding:          $gutter-width;
+
 @include border-box-sizing; 
+
+// Susy -------------------------------------
+
+/*$susy: (
+	columns: 12,
+	gutter-position: inside,
+	gutter-width: 1/4,
+);
+*/
+
+
 
 h1 { font-size: 2rem; }
 h2 { font-size: 1.5rem; }

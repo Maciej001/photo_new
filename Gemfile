@@ -8,7 +8,6 @@ gem 'faker'
 gem 'will_paginate'
 
 group :development, :test do
-
 	gem 'rspec-rails', '2.13.1'
 	gem 'guard-rspec', '2.5.0'
 
@@ -30,10 +29,10 @@ end
 # Gems used only for assets and not required
 # in production environments by default
 group :assets do
-	gem 'sass-rails'  # use scss for stylesheets
+	gem 'sass-rails', '~> 4.0.3'  # use scss for stylesheets
 	gem 'compass-rails'  #otoczka :assets dodana na potrzeby compass
 	gem 'susy'
-	gem "font-awesome-rails"
+	gem "font-awesome-rails"   
 end
 
 gem 'uglifier', '>= 1.3.0'   # as compressor for JS assets
