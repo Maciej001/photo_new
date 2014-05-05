@@ -1,9 +1,28 @@
 <% provide(:title, 'Home') %>
-<div class="jumbo">
-	<section class="jumbo-header">
-		<h1>Photo app</h1>
-		<h2>This is the home page for the Photo app</h2>
-	</section>
-	<%= link_to "Sign up now!", signup_path, class: "btn btn-large" %>
+<% if signed_in? %>
+	
+	<div class="container">
+		<div class="user-info-wrapper">
+			
+			<%= render "shared/user_info" %>
+			<%= link_to "Profile", current_user, class: 'btn' %>
 
-</div>
+			<div class="micropost-form-wrapper">
+				<%= render "shared/micropost_form" %>
+			</div>
+
+		</div> <!-- user-info-wrapper -->
+
+		<p><%= current_user.id%></p>
+
+	</div> <!-- container -->
+
+<% else %>
+	<div class="jumbo">
+		<section class="jumbo-header">
+			<h1>Photo app</h1>
+			<h2>This is the home page for the Photo app</h2>
+		</section>
+		<%= link_to "Sign up now!", signup_path, class: "btn btn-large" %>
+	</div> <!-- jumbo -->
+<% end %>

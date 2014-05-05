@@ -18,12 +18,13 @@
 	padding: 20px 0;
 
 	.previous_page, .next_page, .current, a {
-		padding: 8px 15px;
+		padding: 5px 10px;
 		background: $very-light-gray;
 		border: 1px solid $light-gray;
 		@include border-radius(2px);
 
 		font-family: Arial, sans-serif;
+		font-size: 0.8em;
 	}
 
 	.current, a {

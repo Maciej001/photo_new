@@ -18,12 +18,12 @@ before_action :admin_user,      only: :destroy
 
   def new
     redirect_to(root_url) if signed_in?
-    
   	@user = User.new 
   end
 
   def show 
   	@user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page], per_page: 10)
   end
 
   def create
@@ -63,14 +63,6 @@ before_action :admin_user,      only: :destroy
       # administrative access to smart users
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
-    end
-
-    # used by before_action filter
-    def signed_in_user
-      unless signed_in?
-        store_location # to be able to redirect user back to the page
-        redirect_to signin_url, notice: "Please sign in."
-      end
     end
 
     # correct user is used to check if user1 is not trying to 

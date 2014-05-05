@@ -1,7 +1,23 @@
 <% provide(:title, @user.name) %>
 <div class="container">
-	<section class="photographer">
-			<%= image_tag("photographer_300x300.jpg", alt: @user.name, class: "avatar") %>
-			<h2><%= @user.name %></h2>
-	</section>
-</div>
+	
+	<div class="user-info-wrapper">
+		<%= render 'shared/user_info' %>
+	</div>
+	
+	<section class="microposts">	
+		<% if @user.microposts.any? %>
+			<h2>(<%= @user.microposts.count %>) Microposts</h2>
+			
+		<ul>
+			<%= render @microposts %>
+		</ul>
+
+			<%= will_paginate @microposts, outer_window: 0, inner_window: 1, previous_label: "<", next_label: ">" %>
+		
+		<% end %> <!-- if -->
+	</section> <!-- microposts -->
+
+</div> <!-- container -->
+
+- why m1 m2 - spec fails?

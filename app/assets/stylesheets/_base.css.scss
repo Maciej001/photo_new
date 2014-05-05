@@ -52,15 +52,25 @@ h2 {
 	margin: 20px;
 }
 
-a.btn {
+.container { 
+	@include container; 
+	margin-top: 20px;
+}
+
+.btn {
 	display: inline-block;
 	margin: 20px auto;
 	padding: 10px 15px;
-	background: $orange;
-	color: $white;
+	background: none;
+	color: $orange;
+	border: 4px solid $orange;
+	@include border-radius(2px);
+	font-size: 1em;
+	font-weight: bold;
 
 	&:hover {
-		background: $red;
+		color: $red;
+		border: 4px solid $red;
 	}
 }
 
@@ -95,3 +105,14 @@ i {
 }
 
 .menu-icon { color: $gray;}
+
+.alert > h2 {
+	display: inline-block;
+	padding: 10px 20px;
+	@include border-radius(2px);
+}
+
+.alert-success > h2 { 
+	background: $light-green;
+	color: white; 
+}

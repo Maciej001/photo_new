@@ -1,0 +1,50 @@
+.micropost-form-wrapper {
+
+}
+
+.micropost-form {
+	h2 {
+		margin: 20px 0;
+	}
+	textarea {
+		width: 100%;
+		height: 150px;
+		border: 1px solid $light-gray;
+		@include border-radius(2px);
+		padding: 10px;
+		font-size: 1em;
+		color: $gray;
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.micropost {
+	margin: 20px auto;
+	padding-top: 10px;
+	border-top: 1px solid $light-gray;
+
+	&:first-child {
+		border-top: none;	
+	}
+	
+	.user-name {
+		margin-top: 5px;
+		font-size: 0.8em;
+	}
+	.user-name span a {
+		color: $orange;
+		font-size: 1em;
+	}
+	
+	.content {
+		margin: 5px 0;
+	}
+
+	.created-at {
+		display: inline;
+		font-size: 0.8em;
+		color: $light-gray;
+	}
+}

@@ -1,0 +1,8 @@
+<li class="micropost" id="<%= feed_item.id %>">
+	
+	<p class="content"><%= feed_item.content %></p>
+	<p class="created-at">Posted on <%= feed_item.created_at %></p>
+	<p class="user-name">by 
+		<span><%= link_to feed_item.user.name, feed_item.user %></span>
+	</p>
+</li>

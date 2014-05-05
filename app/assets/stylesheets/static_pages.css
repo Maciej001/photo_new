@@ -1,4 +1,10 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+// Home page styles ---------------------------
+
+.user-info-wrapper {
+	@include span-columns(6);
+}
+
+.feed-wrapper {
+	@include span-columns(6 omega);	
+	padding-left: 1em;
+}

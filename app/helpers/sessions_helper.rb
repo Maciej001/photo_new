@@ -24,6 +24,14 @@ module SessionsHelper
 		current_user == user
 	end
 
+  # used by before_action filter
+  def signed_in_user
+    unless signed_in?
+      store_location # to be able to redirect user back to the page
+      redirect_to signin_url, notice: "Please sign in."
+    end
+  end
+
 	def sign_out
 		current_user.update_attribute(:remember_token, User.hash(User.new_remember_token))
 		cookies.delete(:remember_token)
@@ -31,7 +39,6 @@ module SessionsHelper
 	end
 
 	# two functions to store and restore your current page
-
 	def store_location
 		session[:return_to] = request.url if request.get?
 	end
