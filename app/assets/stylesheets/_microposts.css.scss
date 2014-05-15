@@ -2,6 +2,14 @@
 
 }
 
+.microposts-wrapper {
+	padding-left: 1em;
+	@include span-columns(6 omega);
+
+	h2 {
+		margin: 0;
+	}
+}
 .micropost-form {
 	h2 {
 		margin: 20px 0;
@@ -30,8 +38,10 @@
 	}
 	
 	.user-name {
+		display: inline-block;
 		margin-top: 5px;
 		font-size: 0.8em;
+		color: $light-gray;
 	}
 	.user-name span a {
 		color: $orange;
@@ -39,6 +49,7 @@
 	}
 	
 	.content {
+	
 		margin: 5px 0;
 	}
 

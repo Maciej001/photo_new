@@ -5,7 +5,7 @@
 		<%= render 'shared/user_info' %>
 	</div>
 	
-	<section class="microposts">	
+	<div class="microposts-wrapper">	
 		<% if @user.microposts.any? %>
 			<h2>(<%= @user.microposts.count %>) Microposts</h2>
 			
@@ -16,8 +16,7 @@
 			<%= will_paginate @microposts, outer_window: 0, inner_window: 1, previous_label: "<", next_label: ">" %>
 		
 		<% end %> <!-- if -->
-	</section> <!-- microposts -->
+	</div> <!-- microposts -->
 
 </div> <!-- container -->
 
-- why m1 m2 - spec fails?

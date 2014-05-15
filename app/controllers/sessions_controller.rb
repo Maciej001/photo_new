@@ -20,9 +20,15 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       sign_in user
 
-      # function implemented in sessions helper
-      # to redirect user to stored earlier page
-      redirect_back_or user
+	    # function implemented in sessions helper
+	    # to redirect user to stored earlier page or 
+	    # after logged in to reshaped root_path.
+	     
+		  redirect_back_or root_path
+
+
+	    # redirect_to root_path
+
     else
       flash.now[:error] = 'Invalid email/password combination'
       render 'new'

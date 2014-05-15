@@ -1,4 +1,12 @@
 <li class="micropost">
 	<p class="content"><%= micropost.content %></p>
 	<p class="created-at">Post on <%= micropost.created_at %></p>
+
+	<% if current_user?(micropost.user) %>
+    <%= link_to "delete", micropost, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: micropost.content,
+                                     class: "btn btn-small" %>
+  <% end %>
+
 </li>

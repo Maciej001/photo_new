@@ -14,4 +14,10 @@
 
 .user-info {
 	@include clearfix;
+
+	a {
+		color: $orange;
+		&:hover {color: $red;}
+
+	}
 }

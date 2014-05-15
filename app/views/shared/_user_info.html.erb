@@ -1,4 +1,4 @@
 	<section class="user-info">
-			<%= image_tag("photographer_300x300.jpg", alt: current_user.name, class: "avatar") %>
-			<h2><%= current_user.name %></h2>
+		<%= image_tag("photographer_300x300.jpg", alt: @user.name, class: "avatar") %>		
+		<%= link_to @user.name, @user%>
 	</section> <!-- photographer -->

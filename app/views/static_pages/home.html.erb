@@ -1,23 +1,26 @@
-<% provide(:title, 'Home') %>
+
 <% if signed_in? %>
-	
+	<% provide(:title, current_user.name) %>
 	<div class="container">
 		<div class="user-info-wrapper">
 			
-			<%= render "shared/user_info" %>
-			<%= link_to "Profile", current_user, class: 'btn' %>
+			<%= render "shared/current_user_info" %>
 
 			<div class="micropost-form-wrapper">
 				<%= render "shared/micropost_form" %>
 			</div>
 
 		</div> <!-- user-info-wrapper -->
-
-		<p><%= current_user.id%></p>
+		
+		<div class="microposts-wrapper">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
 
 	</div> <!-- container -->
 
 <% else %>
+	<% provide(:title, 'Home') %>
 	<div class="jumbo">
 		<section class="jumbo-header">
 			<h1>Photo app</h1>
