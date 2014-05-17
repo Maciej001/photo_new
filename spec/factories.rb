@@ -14,4 +14,8 @@ FactoryGirl.define do
 		content "Lorem ipsum"
 		user
 	end
+
+	factory :album do
+		sequence(:name) { |n| "Album #{n}" }
+	end
 end

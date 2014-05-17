@@ -4,6 +4,13 @@ Photo::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create,:destroy]
 
+  concern :attachable do 
+    resources :images
+  end
+
+  resources :albums, concerns: :attachable
+
+
   root  'static_pages#home'
 
   match '/signup',    to: 'users#new',            via: 'get'
