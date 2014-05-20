@@ -9,9 +9,6 @@
 			
 			<nav class="menu-container">
 				<ul class="nav">
-					<li><%= link_to "Home", root_path %></li>
-					<li><%= link_to "Album", album_path %></li>
-					<li><%= link_to "Help", help_path %></li>
 					<li><%= link_to "About Us", about_path %></li>
 
 					<% if signed_in? %>
@@ -19,6 +16,12 @@
 						<li>
 							<%= link_to(users_path) do %>
 								<i class="fa fa-users"></i>Users
+							<% end %>
+						</li>
+						
+						<li>
+							<%= link_to(albums_path) do %>
+								<i class="fa fa-folder"></i>Albums
 							<% end %>
 						</li>
 

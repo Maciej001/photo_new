@@ -1,3 +1,26 @@
-// Place all the styles related to the Albums controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.albums-listing-header {
+	@include pie-clearfix;
+}
+
+.albums-collection {
+	h2 { 
+		display: inline-block;
+		margin-right: 50px;
+	}
+}
+.album {
+	float: left;
+	margin: 20px;
+	padding: 20px;
+	width: 200px;
+	height: 250px;
+	background: $very-light-gray;
+	border: 1px solid $light-gray;
+}
+
+.album-index {
+	h1 {
+		display:inline-block;
+		margin-right: 30px;
+	}
+}

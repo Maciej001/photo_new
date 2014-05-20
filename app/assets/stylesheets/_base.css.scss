@@ -49,7 +49,7 @@ a {
 }
 
 h2 {
-	margin: 20px;
+	margin: 20px 0;
 }
 
 .container { 
@@ -88,6 +88,17 @@ h2 {
 	}
 }
 
+
+// Hidding input file UGLY buttons 
+input[type=file] {
+	display:none;
+}
+
+.btn-file-upload {
+	background: $light-green;
+}
+
+
 .error_explanations {
 
 	background: rgba(255,255,255, 0.25);
@@ -119,6 +130,9 @@ i {
 .alert > h2 {
 	display: inline-block;
 	padding: 10px 20px;
+	margin: 20px 0 0 0;
+	background: $light-green;
+	color: white;
 	@include border-radius(2px);
 }
 

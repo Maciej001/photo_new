@@ -1,0 +1,13 @@
+<% provide(:title, @album.name) %>
+<div class="albums-collection">
+	<h2><%= @album.name %></h2>
+	<%= link_to "Add photo", [:new, @attachable, :image], class: "btn btn-small" %>
+
+	<div class="image-collection">
+		<% @album.images.each do |image| %>
+				<%= image_tag image.picture.url, class: "image-basic" %>
+		<% end %>
+	</div>
+</div>
+
+

@@ -3,4 +3,6 @@ class Image < ActiveRecord::Base
 	
 	validates :file_name, presence: true
 	validates :attachable_id, presence: true
+
+	mount_uploader :picture, PictureUploader
 end

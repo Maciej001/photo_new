@@ -7,6 +7,7 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'faker'
 gem 'will_paginate'
 gem 'haml'
+gem 'carrierwave'
 
 group :development, :test do
 	gem 'rspec-rails', '2.13.1'

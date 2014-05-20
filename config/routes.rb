@@ -10,7 +10,6 @@ Photo::Application.routes.draw do
 
   resources :albums, concerns: :attachable
 
-
   root  'static_pages#home'
 
   match '/signup',    to: 'users#new',            via: 'get'

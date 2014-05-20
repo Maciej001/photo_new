@@ -1,2 +1,47 @@
-<h1>Images#new</h1>
-<p>Find me in app/views/images/new.html.erb</p>
+
+<section class="image-form" id="image-form">
+	<h2>New Image</h2>
+
+	 	<%= form_for [@attachable, @image] do |f| %>
+ 		<%= render 'shared/error_messages', object: f.object %>
+
+ 		<%= f.file_field :picture, class: "btn", id: "fileUgly"  %>
+
+	 <a href="#" id="fileNice" class="btn btn-file-upload">
+	 		Chose file
+	 </a>
+
+ 	 <%= f.submit "Add", class: "btn"%>
+	 	<% end %>
+
+</section> <!-- image-form -->
+
+<script>
+	
+	// 1. hide input field (fileUgly) via css 
+	// 2. when nice fileNice button gets clicked it triggers fileUgly click
+	// 
+	var fileNice = document.getElementById("fileNice"),
+  	  fileUgly = document.getElementById("fileUgly");
+
+	fileNice.addEventListener("click", function (e) {
+	  if (fileUgly) { fileUgly.click(); }
+	  e.preventDefault(); 
+	}, false);
+
+	// let's store selectedFile
+	// let's add the name 
+
+	fileUgly.addEventListener("change", fileChosen,false);
+
+	function fileChosen() {
+		var fileList = this.files,
+				imageForm = document.getElementById("image-form"),
+				el = document.createElement("p");
+
+				el.innerHTML = fileList[0].name;
+
+				imageForm.appendChild(el);
+	}
+</script>
+

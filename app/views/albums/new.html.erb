@@ -1,2 +1,19 @@
-<h1>Albums#new</h1>
-<p>Find me in app/views/albums/new.html.erb</p>
+<% provide(:title, "New album") %>
+
+<div class="album-wrapper">
+  <section class="new-album">
+
+    <h1>Add Album</h1>
+    <%= form_for(:album, url: albums_path) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.submit "Create", class: "btn" %>
+
+    <% end %>
+  </section> <!-- new-album -->
+</div> <!-- album-wrapper -->
+
+
+
