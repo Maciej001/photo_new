@@ -4,10 +4,12 @@
 	<%= link_to "Add photo", [:new, @attachable, :image], class: "btn btn-small" %>
 
 	<div class="image-collection">
-		<% @album.images.each do |image| %>
-				<%= image_tag image.picture.url, class: "image-basic" %>
+		<% @images.each do |image| %>
+			<div class="image-frame">
+				<%= image_tag image.picture.url(:thumb), class: "image-basic" %>
+				<%= link_to "delete", [@attachable, image], method: :delete, class: "btn btn-small btn-green" %>
+			</div>
 		<% end %>
 	</div>
 </div>
-
 

@@ -1,5 +1,4 @@
 class ImagesController < ApplicationController
-  # sets the @attachable
   before_filter :load_attachable
 
   def index
@@ -22,10 +21,16 @@ class ImagesController < ApplicationController
     end
 	end
 
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+    redirect_to @attachable
+  end
+
 	private
 
   	def image_params
-  		params.require(:image).permit(:file_name, :picture)
+  		params.require(:image).permit(:file_name, :picture, :remote_picture_url)
   	end
 
     def load_attachable

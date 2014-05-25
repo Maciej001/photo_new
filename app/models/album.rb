@@ -1,9 +1,7 @@
 class Album < ActiveRecord::Base
-	include Attachable
+	validates :name, presence: true
 
-	def collection
-		Image.where("attachable_id = ? and attachable_type = ?", id, "album")
-	end
+	include Attachable
 
 end
 

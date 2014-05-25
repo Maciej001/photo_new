@@ -1,14 +1,27 @@
 .image-basic {
-	width: 	300px;
+	width: 300px;
 	height: 200px;
-	padding: 10px;
 	@include border-radius(2px);
 }
 
+.image-frame {
+	float: left;
+	width: 300px;
+	margin: 0 20px 20px 0;
+	@include border-radius(2px);
+	background: white;
+
+	.btn-small {
+		margin: 10px 0 20px 0;
+	}
+}
+
 .image-collection {
+	margin-top: 20px;
 	@include pie-clearfix;
 }
 
 .image-form {
 	@include pie-clearfix;
 }
+

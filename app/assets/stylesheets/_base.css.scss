@@ -80,6 +80,7 @@ h2 {
 
 .btn-small {
 	padding: 5px 10px;
+	margin: 0;
 	font-weight: normal;
 	font-size: 0.8em;
 	
@@ -88,6 +89,13 @@ h2 {
 	}
 }
 
+.btn-green {
+	background: $light-green;
+
+	&:hover {
+		background: darken($light-green, 10%);
+	}
+}
 
 // Hidding input file UGLY buttons 
 input[type=file] {
