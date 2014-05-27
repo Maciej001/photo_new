@@ -1,0 +1,26 @@
+- provide(:title, 'Edit user') 
+
+.signup-wrapper.edit-profile-wrapper
+  .signup
+
+    %h1 Update your profile
+    = form_for(@user) do |f| 
+
+      = render 'shared/error_messages', object: f.object 
+
+      = f.label :name 
+      <%= f.text_field :name 
+
+      = f.label :email 
+      = f.text_field :email 
+
+      = f.label :password 
+      = f.password_field :password 
+
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation 
+
+      = f.submit "Save changes", class: "btn-signup" 
+ 
+  = image_tag("photographer_300x300.jpg", alt: @user.name, class: "avatar")
+  = link_to "change", "#"

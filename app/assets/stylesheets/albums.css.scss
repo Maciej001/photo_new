@@ -1,16 +1,22 @@
 .albums-listing-header {
 	@include pie-clearfix;
+	margin-bottom: 20px;
 }
 
-.albums-collection {
+.album-wrapper{
+	.album-name {
+		@include pie-clearfix;
+		margin-bottom: 40px;
+	}
+	
 	h2 { 
-
-		margin-right: 50px;
+		display: inline-block;
+		margin: 0 25px 0 0 ;
 	}
 }
 .album {
 	float: left;
-	margin: 20px;
+	margin-right: $gutter-width;
 	padding: 20px;
 	width: 200px;
 	height: 250px;

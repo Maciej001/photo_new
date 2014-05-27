@@ -1,0 +1,43 @@
+%header.navbar
+	.navbar-inner
+		.header-container
+			.logo-wrapper
+				= link_to "Photo", root_path, id: "logo"
+				%i.menu-icon.fa.fa-bars.fa-lg
+			
+			%nav.menu-container
+				%ul.nav
+					- if signed_in? 
+
+						%li
+							= link_to(users_path) do
+								%i.fa.fa-users Users
+						
+						%li
+							= link_to(albums_path) do 
+								%i.fa.fa-folder Albums
+							
+						%li
+							= link_to "Account", "#"
+
+					- else
+						%li
+							= link_to "Sign in", signin_path
+
+		- if signed_in?
+			.submenu-wrapper
+				.submenu
+					%ul
+						%li
+							= link_to(current_user) do
+								%i.fa.fa-user Profile
+						 
+						%li
+							= link_to(edit_user_path(current_user)) do
+								%i.fa.fa-gear Settings
+
+						%li
+							= link_to(signout_path, method: "delete") do
+								%i.fa.fa-lock Sign out
+						
+			

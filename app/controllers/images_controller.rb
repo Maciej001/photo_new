@@ -12,6 +12,9 @@ class ImagesController < ApplicationController
   def create 
     @image = @attachable.images.new(image_params)
 
+    # add cover_photo if missing
+    @attachable.update(cover_photo: @image.picture) if @attachable.cover_photo.nil?
+
     @image.file_name = "file_name_2"
 
     if @image.save
@@ -41,5 +44,6 @@ class ImagesController < ApplicationController
       # it will translate into Album.find(1)
       @attachable = resource.singularize.classify.constantize.find(id)
     end
+
 end
 

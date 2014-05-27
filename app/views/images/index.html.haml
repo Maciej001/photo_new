@@ -1,0 +1,3 @@
+.container
+	- @images.each do |image|
+		= image_tag image.picture.url, class: "image-basic"

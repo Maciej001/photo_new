@@ -1,0 +1,6 @@
+.micropost-form
+	%h2 New Post
+	= form_for(@micropost) do |f|
+		= render 'shared/error_messages', object: f.object
+		= f.text_area :content, placeholder: "Compose new micropost"
+		= f.submit "Post", class: "btn"

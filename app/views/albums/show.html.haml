@@ -1,0 +1,14 @@
+- provide(:title, @album.name)
+.container
+	.album-wrapper
+		.album-name
+			%h2= @album.name
+			= link_to "edit", "#", class: "btn btn-small btn-action" 
+			= link_to "delete", "#", class: "btn btn-small btn-action"
+			= link_to "Upload photos", [:new, @attachable, :image], class: "btn btn-small"
+
+		.image-collection
+			- @images.each do |image|
+				.image-frame
+					= image_tag image.picture.url(:thumb), class: "image-basic"
+					= link_to "delete", [@attachable, image], method: :delete, class: "btn btn-small btn-delete"

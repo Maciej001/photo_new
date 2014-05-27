@@ -13,16 +13,25 @@ $grid-padding:          $gutter-width;
 
 // Colors ---------------------------------------
 
-$white: 		#e5e5e5;
-$orange: 		#f48d6c;
-$red: 			#F16663;
-$light-green: #85BF5D;
+$white: 					#e5e5e5;
+$yellow:    			#FFBE48;
+$light-yellow: 		#FFE8BB;
+$very-light-yellow: #FFF4E2;
+$orange: 					#f48d6c;
+$red: 						#F16663;
 
-$gray: 			#888;
-$light-gray: #aaa;
+$very-light-green:#D6EDD0;
+$light-green: 		#85BF5D;
+$dark-blue: 			#175673;
+$blue:    				#1F749C;
+$light-blue:    	#5693B2;
+$very-light-blue: #90B0C2;
+
+$gray: 						#888;
+$light-gray: 			#aaa;
 $very-light-gray: #eee;
-$dark-gray: #333;
+$dark-gray: 			#333;
 
 // Menu -----------------------------------------
 
-$menu-height: 60px;
+$menu-height: 40px;

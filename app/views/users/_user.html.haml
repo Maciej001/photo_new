@@ -1,0 +1,6 @@
+%li 
+	= image_tag("photographer_300x300.jpg", alt: user.name, class: "avatar")
+	.user-data
+		= link_to user.name, user
+		- if current_user.admin? && !current_user?(user)
+			= link_to "delete", user, method: :delete, data: { confirm: "You sure?" }

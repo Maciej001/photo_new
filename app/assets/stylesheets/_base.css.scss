@@ -54,7 +54,6 @@ h2 {
 
 .container { 
 	@include container; 
-	margin-top: 20px;
 }
 
 .btn {
@@ -69,7 +68,6 @@ h2 {
 	font-weight: bold;
 
 	&:hover {
-		background: $red;
 		color: white;
 	}
 }
@@ -79,14 +77,22 @@ h2 {
 }
 
 .btn-small {
-	padding: 5px 10px;
+	padding: 4px 6px;
 	margin: 0;
 	font-weight: normal;
-	font-size: 0.8em;
-	
-	&:hover {
-		background: $red;
-	}
+	font-size: 0.75rem;
+	background: $light-green;
+	color: $very-light-green;
+}
+
+.btn-action {
+	background: $dark-blue;
+	color: $very-light-blue;
+}
+
+.btn-delete {
+	background: $yellow;
+	color: $very-light-yellow;
 }
 
 .btn-green {
@@ -104,6 +110,18 @@ input[type=file] {
 
 .btn-file-upload {
 	background: $light-green;
+}
+
+a.sml-action {
+	font-size: 0.75rem;
+	background: $dark-blue;
+	color: $very-light-blue;
+	padding: 4px 6px;
+	margin: 0;
+	@include border-radius(2px);
+	&:hover {
+		color: white;
+	}
 }
 
 
@@ -133,7 +151,7 @@ i {
 	margin-right: 5px;
 }
 
-.menu-icon { color: $gray;}
+.menu-icon { color: $light-yellow;}
 
 .alert > h2 {
 	display: inline-block;

@@ -1,0 +1,12 @@
+%li.micropost
+	%p.content 
+		= micropost.content
+	%p Posted on 
+	%span.created-at= micropost.created_at
+
+	- if current_user?(micropost.user)
+		= link_to "delete", micropost, method: :delete,
+				data: { confirm: "You sure?" },
+				title: micropost.content,
+        class: "btn btn-small" 
+  

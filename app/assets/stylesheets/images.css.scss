@@ -25,3 +25,21 @@
 	@include pie-clearfix;
 }
 
+
+// beautifull hack
+// *:nth-child(n) { background-color: rgba(0,0,255,.2); }
+
+// transform page in editor
+// data:text/html, <html contenteditable> in address bar and hit enter
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 100px solid #0099ff;
+    border-left: 100px dashed transparent;
+    border-right: 100px dashed transparent;
+    border-bottom: 0;
+   display: block;
+   overflow: hidden;
+}
+

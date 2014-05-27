@@ -1,0 +1,14 @@
+- provide(:title, @user.name)
+.container
+	.user-info-wrapper
+		= render 'shared/user_info'
+	
+	.microposts-wrapper
+		- if @user.microposts.any?
+			%h2 (#{@user.microposts.count}) Microposts
+			
+			%ul
+				= render @microposts
+
+			= will_paginate @microposts, outer_window: 0, inner_window: 1, previous_label: "<", next_label: ">"
+		

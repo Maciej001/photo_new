@@ -1,0 +1,16 @@
+%li.micropost{ id: "micropost_#{feed_item.id}" }
+	
+%p.user-name by
+%span= link_to feed_item.user.name, feed_item.user
+	
+%p.created-at= feed_item.created_at
+
+%p.content= feed_item.content
+
+- if current_user?(feed_item.user)
+	= link_to "delete", feed_item, 
+		method: :delete, 
+		data: { confirm: "You sure?" }, 
+		title: feed_item.content, 
+		class: "btn btn-small"
+

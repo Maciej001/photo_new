@@ -1,10 +1,11 @@
+.navbar, .navbar-inner, .header-container, header, .nav {height: $menu-height;}
+
 header {
 	width: 100%;
-	background: #e5e5e5;
+	background: $blue;
 
 	.header-container {
 		text-align: center;
-		min-height: $menu-height;
 
 		.logo-wrapper {
 			position: relative;
@@ -14,10 +15,9 @@ header {
 			#logo {
 				display: inline;
 				line-height: $menu-height;
-
-				&:hover {
-					color: $gray;
-				}
+				color: $very-light-blue;
+				font-size: 1.25rem;
+				&:hover {color: white;}
 			}
 
 			.menu-icon {
@@ -31,10 +31,10 @@ header {
 				@include border-radius(3px);
 
 				&:hover {
-					color: $dark-gray;
+					color: white;
 					cursor: pointer;
 				}
-			}
+			} // menu-item
 		} // logo-wrapper
 
 
@@ -48,8 +48,15 @@ header {
 
 				li {
 					display: block;
+					background: $blue;
+					line-height: $menu-height;
 					padding: 20px 0;
-					border-top: 1px solid $light-gray;
+					border-top: 1px solid $light-blue;
+						a {
+							color: $very-light-blue;
+							&:hover {color: white;}
+
+						}
 				}
 			}
 
@@ -65,9 +72,6 @@ header {
 
 			.logo-wrapper {
 				float: left;
-				/*a > #logo {
-					margin: 10px 0;
-				}*/
 
 				.menu-icon {
 					display: none;
@@ -84,6 +88,7 @@ header {
 				
 					li { 
 						border-top: none;
+						padding: 0 20px;
 					}
 				}
 			} // .menu-container

@@ -1,0 +1,45 @@
+.container
+	.image-form#image-form
+		%h2 New Image
+
+		= form_for [@attachable, @image] do |f|
+			= render 'shared/error_messages', object: f.object
+			
+			= f.file_field :picture, class: "btn", id: "fileUgly"
+	 		
+			= f.label :remote_picture_url, "or image URL"
+			= f.text_field :remote_picture_url
+
+			= link_to "Chose file", "#", class: "btn btn-file-upload", id: "fileNice"
+
+			= f.submit "Add", class: "btn"
+		 	
+
+:javascript
+	var d = document;
+	// 1. hide input field (fileUgly) via css 
+	// 2. when nice fileNice button gets clicked it triggers fileUgly click
+	// 
+	var fileNice = d.getElementById("fileNice"),
+			fileUgly = d.getElementById("fileUgly");
+
+	fileNice.addEventListener("click", function (e) {
+		if (fileUgly) { fileUgly.click(); }
+		e.preventDefault(); 
+	}, false);
+
+	// store fileList
+	// add the first file from fileList after the image-form
+
+	fileUgly.addEventListener("change", fileChosen,false);
+
+	function fileChosen() {
+		var fileList = this.files,
+			imageForm = d.getElementById("image-form"),
+			el = d.createElement("p");
+
+			el.innerHTML = fileList[0].name;
+			imageForm.appendChild(el);
+	}
+
+

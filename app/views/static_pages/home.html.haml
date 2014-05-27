@@ -1,0 +1,25 @@
+
+- if signed_in?
+	- provide(:title, current_user.name)
+	
+	.container
+		.user-info-wrapper
+			
+			= render "shared/current_user_info"
+
+			.micropost-form-wrapper
+				= render "shared/micropost_form"
+		
+		.microposts-wrapper
+			%h3 Micropost Feed
+			= render 'shared/feed'
+
+- else
+	- provide(:title, 'Home')
+	
+	.jumbo
+		.jumbo-header
+			%h1 Photo app
+			%h2 This is the home page for the Photo app
+
+		= link_to "Sign up now!", signup_path, class: "btn btn-large"

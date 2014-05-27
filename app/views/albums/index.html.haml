@@ -1,0 +1,11 @@
+.container
+	.album-index
+		.albums-listing-header
+			%h2 Albums
+			= link_to(new_album_path) do 
+				%p.btn.btn-small
+					%i.fa.fa-plus new
+
+		= will_paginate @albums, previous_label: "<", next_label: ">"
+		= render @albums
+		= will_paginate @albums, previous_label: "<", next_label: ">"
